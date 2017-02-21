@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-import { MaterializeDirective } from 'angular2-materialize';
+import { MaterializeDirective, MaterializeModule } from 'angular2-materialize';
 import { MaterialModule } from '@angular/material';
 
 // Home
@@ -40,7 +40,7 @@ import { OrganizationService } from './organization/common/organization.service'
 import { ProjectService }  from './project/common/project.service';
 import { ProjectCreateService } from './project/create/project-create.service';
 import { UserService }        from './user/common/user.service';
-import { PagerService } from './_services/pager.service';      
+import { PagerService } from './_services/pager.service';
 
 @NgModule({
   imports: [
@@ -49,7 +49,8 @@ import { PagerService } from './_services/pager.service';
     ReactiveFormsModule,
     MaterialModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterializeModule
   ],
   declarations: [
     AppComponent,
@@ -73,11 +74,9 @@ import { PagerService } from './_services/pager.service';
     LoginComponent,
     ForgotPasswordComponent,
     ResetPasswordComponent,
-
-    MaterializeDirective,
   ],
   providers: [ ProjectService,
-               ProjectCreateService,  
+               ProjectCreateService,
                OrganizationService,
                UserService,
                PagerService],
